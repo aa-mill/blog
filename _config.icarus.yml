@@ -3,11 +3,11 @@ version: 5.1.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/func.png
+logo: /imgs/gray.svg
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /img/func.png
+    favicon: /imgs/red.ico
     # Web application manifests configuration
     # https://developer.mozilla.org/en-US/docs/Web/Manifest
     manifest:
@@ -109,14 +109,17 @@ navbar:
         Archives: /archives
         Categories: /categories
         Tags: /tags
-        About: /
+        About: /about
     # Links to be shown on the right of the navigation bar
     links:
+        # Download on GitHub:
+        #     icon: fab fa-github
+        #     url: https://github.com/ppoffice/hexo-theme-icarus
         Website: ../
 # Page footer configurations
 footer:
     # Copyright text
-    copyright: Icon made by Freepik from www.flaticon.com
+    copyright: © 2019
     # Links to be shown on the right of the footer section
     links:
         Creative Commons:
@@ -125,9 +128,9 @@ footer:
         Attribution 4.0 International:
             icon: fab fa-creative-commons-by
             url: https://creativecommons.org/licenses/by/4.0/
-        GitHub:
+        Download on GitHub:
             icon: fab fa-github
-            url: https://github.com/aa-mill
+            url: https://github.com/ppoffice/hexo-theme-icarus
 # Article related configurations
 article:
     # Code highlight settings
@@ -162,13 +165,13 @@ search:
     index_pages: true
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
-comment:
+# comment:
     # type: disqus
     # # Disqus shortname
     # shortname: ''
 # Donate plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Donation/
-donates:
+# donates:
     # # "Afdian.net" donate button configurations
     # -
     #     type: afdian
@@ -233,7 +236,7 @@ widgets:
         # Author's current location
         location: Cambridge, MA
         # URL or path to the avatar image
-        avatar: img/headshot.jpg
+        avatar: imgs/headshot.jpg
         # Whether show the rounded avatar image
         avatar_rounded: true
         # Email address for the Gravatar
@@ -256,10 +259,7 @@ widgets:
                 url: https://twitter.com
             LinkedIn:
                 icon: fab fa-linkedin
-                url: https://linkedin.com/in/aarmiller
-            Email:
-                icon: fab fa-solid fa-envelope
-                url: mailto:aaronmwmiller@outlook.com 
+                url: https://linkedin.com/in/aarmiller    
             # Dribbble:
             #     icon: fab fa-dribbble
             #     url: https://dribbble.com
@@ -312,35 +312,35 @@ widgets:
         amount: 
         # Whether to show tags count, i.e. number of posts in the tag.
         show_count: true
-    # # Google FeedBurner email subscription widget configurations
-    # -
-    #     # Where should the widget be placed, left sidebar or right sidebar
-    #     position: left
-    #     type: subscribe_email
-    #     # Hint text under the email input
-    #     description: 
-    #     # Feedburner ID
-    #     feedburner_id: ''
-    # # Google AdSense unit configurations
-    # -
-    #     # Where should the widget be placed, left sidebar or right sidebar
-    #     position: left
-    #     type: adsense
-    #     # AdSense client ID
-    #     client_id: ''
-    #     # AdSense AD unit ID
-    #     slot_id: ''
-    # # Follow.it email subscription widget configurations
-    # -
-    #     # Where should the widget be placed, left sidebar or right sidebar
-    #     position: left
-    #     type: followit
-    #     # Hint text under the email input
-    #     description: 
-    #     # Subscription form action URL
-    #     action_url: ''
-    #     # Feed claiming verification code
-    #     verification_code: ''
+    # Google FeedBurner email subscription widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: subscribe_email
+        # Hint text under the email input
+        description: 
+        # Feedburner ID
+        feedburner_id: ''
+    # Google AdSense unit configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: adsense
+        # AdSense client ID
+        client_id: ''
+        # AdSense AD unit ID
+        slot_id: ''
+    # Follow.it email subscription widget configurations
+    -
+        # Where should the widget be placed, left sidebar or right sidebar
+        position: left
+        type: followit
+        # Hint text under the email input
+        description: 
+        # Subscription form action URL
+        action_url: ''
+        # Feed claiming verification code
+        verification_code: ''
 # Plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/
 plugins:
@@ -403,7 +403,7 @@ plugins:
     # http://outdatedbrowser.com/
     outdated_browser: false
     # Show a progress bar at top of the page on page loading
-    progressbar: false
+    progressbar: true
     # Statcounter statistics
     # https://statcounter.com/
     statcounter:
