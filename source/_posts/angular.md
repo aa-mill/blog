@@ -1,13 +1,13 @@
 ---
 title: Angular Momentum and Rotations in Quantum Mechanics
 date: 2025-02-10 18:31:27
-tags: Quantum Mechanics
+tags: Quantum mechanics
 toc: true
 ---
 
 ## Summary
 
-I'm writing this post for two reasons:
+I wrote this post for two reasons:
 
 1. Quantum mechanics is cool and extremely fun to learn/write about.
 2. If you're planning on understanding or doing research on equivariant neural networks, you're going to encounter the Clebsch-Gordon tensor product, which is a way to combine objects known as spherical tensors. In my experience, it helps *immensely* to conceptualize this mechanism in terms of the addition of angular momentum eigenstates. I want to first outline the context from quantum mechanics necessary to do this, and I'll make the connection in another post.
@@ -19,7 +19,7 @@ The background here closely follows the following texts:
 
 ## Classical motivation
 
-The basic properties of rotations in quantum mechanics stem from the commutation relations obeyed by the angular momentum operators. Before unpacking this, we can get a sense of when and how rotations fail to commute by considering rotations in classical physics^[1]. I'll say the connection between rotations and angular momentum shortly.
+The basic properties of rotations in quantum mechanics stem from the commutation relations obeyed by the angular momentum operators. Before unpacking this, we can get a sense of when and how rotations fail to commute by considering rotations in classical physics. I'll say the connection between rotations and angular momentum shortly.
 
 Imagine a vector $\boldsymbol{V}$ in three dimensions with components $V\_{x}$, $V\_{y}$, and $V\_{z}$ in an orthogonal coordinate system:
 
@@ -57,7 +57,7 @@ to second order in $\varepsilon$. This is the classical commutation relation bet
 
 ## Defining rotations in quantum mechanics
 
-We just saw that a rotation matrix $R$ acts on the three components of a classical column vector in 3D space. In quantum mechanics, we work with [[Quantum Mechanics|kets]] whose dimensionality varies based on the space in question. For example, when considering only the spin degree of freedom for a spin $\frac{1}{2}$ particle, the ket space is two-dimensional, and operators take the form of $2\times 2$ matrices.
+We just saw that a rotation matrix $R$ acts on the three components of a classical column vector in 3D space. In quantum mechanics, we work with kets whose dimensionality varies based on the space in question. For example, when considering only the spin degree of freedom for a spin $\frac{1}{2}$ particle, the ket space is two-dimensional, and operators take the form of $2\times 2$ matrices.
 
 So, to speak generally about a rotation identified with $R$, we associate an abstract rotation operator $\mathscr{D}(R)$, which takes different matrix representations depending on the ket space.
 
@@ -97,7 +97,7 @@ $$
 
 Note that $\mathscr{D}\_{z}(\phi)$, $\mathscr{D}(\hat{\boldsymbol{n}}, \phi)$, $\mathscr{D}(\alpha, \beta, \gamma)$, and $\mathscr{D}(R)$ are all notations for the rotation operator; they're just different shorthands for the different ways of specifying a rotation, which will hopefully become clear.
 
-To complete the definition of $\mathscr{D}(R)$, we postulate that these operators inherit the [[Group Theory|group]] properties of $R$, i.e. we postulate that the mapping $\mathscr{D}$ is a [group homomorphism](https://en.wikipedia.org/wiki/Group\_homomorphism).
+To complete the definition of $\mathscr{D}(R)$, we postulate that these operators inherit the group properties of $R$, i.e. we postulate that the mapping $\mathscr{D}$ is a [group homomorphism](https://en.wikipedia.org/wiki/Group\_homomorphism).
 
 In summary, to define $\mathscr{D}(R)$, we
 
@@ -132,7 +132,7 @@ The set of $3\times 3$ orthogonal matrices $R$ with $\det R = 1$, along with the
 
 ### 2. $\mathrm{SU}(2)$ language
 
-In the [[Spin 1h Systems#Pauli two-component formalism|Pauli two-component formalism]], we have
+In the Pauli two-component formalism, we have
 
 $$
 \exp\left( \frac{-i\boldsymbol{S}\cdot\hat{\boldsymbol{n}}\phi}{\hbar} \right) \doteq \exp\left( \frac{-i\boldsymbol{\sigma}\cdot\hat{\boldsymbol{n}}\phi}{2} \right),
@@ -157,20 +157,20 @@ a & b \\\\
 \end{pmatrix},
 $$
 
-with $|a|^{2} + |b|^{2} = 1$, of a general unitary matrix. The set of unitary unimodular matrices (unitary matrices $U$ with $\det(U) = 1$), along with the standard matrix multiplication operation, forms the group $\mathrm{SU}(2)$.
+with $\|a\|^{2} + \|b\|^{2} = 1$, of a general unitary matrix. The set of unitary unimodular matrices (unitary matrices $U$ with $\det(U) = 1$), along with the standard matrix multiplication operation, forms the group $\mathrm{SU}(2)$.
 
 ### Matrix representations
 
 The matrix elements of the rotation operator (Eq. 3.16), given by
 
 $$
-\mathscr{D}\_{m'm}^{(j)}(R) = \braket{ j\ m' | \exp\left( \frac{-i\boldsymbol{J}\cdot\hat{\boldsymbol{n}}\phi}{\hbar} \right) | j\ m } \tag{3.194 Sakurai}  
+\mathscr{D}\_{m'm}^{(j)}(R) = \langle  j\ m' \| \exp\left( \frac{-i\boldsymbol{J}\cdot\hat{\boldsymbol{n}}\phi}{\hbar} \right) \| j\ m  \rangle \tag{3.194 Sakurai}  
 $$
 
 or
 
 $$
-\mathscr{D}\_{m'm}^{(j)}(\alpha, \beta, \gamma) = \braket{ j\ m' | \exp\left( \frac{-iJ\_{z}\alpha}{\hbar} \right)\exp\left( \frac{-iJ\_{y}\beta}{\hbar} \right)\exp\left( \frac{-iJ\_{z}\gamma}{\hbar} \right) | j\ m },
+\mathscr{D}\_{m'm}^{(j)}(\alpha, \beta, \gamma) = \langle  j\ m' \| \exp\left( \frac{-iJ\_{z}\alpha}{\hbar} \right)\exp\left( \frac{-iJ\_{y}\beta}{\hbar} \right)\exp\left( \frac{-iJ\_{z}\gamma}{\hbar} \right) \| j\ m  \rangle,
 $$
 
 
@@ -183,26 +183,26 @@ $$
 where
 
 $$
-d\_{m'm}^{(j)}(\beta) \equiv \braket{ {j\ m'} | \exp\left( \frac{-iJ\_{y}\beta}{\hbar} \right) | j\ m }.
+d\_{m'm}^{(j)}(\beta) \equiv \langle  {j\ m'} \| \exp\left( \frac{-iJ\_{y}\beta}{\hbar} \right) \| j\ m  \rangle.
 $$
 
-Note that since $\boldsymbol{J}^{2}$ and $J\_{k}$ commute, so do $\boldsymbol{J}^{2}$ and $\mathscr{D}(R)$, and hence $\mathscr{D}(R)\ket{j\ m}$ is an eigenket of $\boldsymbol{J}^{2}$ with the same eigenvalue. It follows that $\braket{ j'\ m' | \mathscr{D}(R) | j\ m} = 0$ unless $j' = j$, which is why $\mathscr{D}\_{m'm}^{(j)}(R)$ is defined for a single $j$.
+Note that since $\boldsymbol{J}^{2}$ and $J\_{k}$ commute, so do $\boldsymbol{J}^{2}$ and $\mathscr{D}(R)$, and hence $\mathscr{D}(R)\| j\ m \rangle$ is an eigenket of $\boldsymbol{J}^{2}$ with the same eigenvalue. It follows that $\langle  j'\ m' \| \mathscr{D}(R) \| j\ m \rangle = 0$ unless $j' = j$, which is why $\mathscr{D}\_{m'm}^{(j)}(R)$ is defined for a single $j$.
 
 The $(2j + 1)\times(2j + 1)$ matrix formed from these elements is the $(2j + 1)$-dimensional irreducible representation of the rotation operator. These matrices form a group:
 
 1. Identity: $\phi = 0$.
-2. Inverse: $\phi \to -\phi$. Note that $\mathscr{D}(R)$ is unitary, so $\mathscr{D}\_{m'm}(R^{-1}) = \mathscr{D}\_{mm'}^{*}(R)$.
+2. Inverse: $\phi \to -\phi$. Note that $\mathscr{D}(R)$ is unitary, so $\mathscr{D}\_{m'm}(R^{-1}) = \mathscr{D}\_{mm'}^{\*}(R)$.
 3. Closure: Consider
 	$$
 	\begin{align}
 	\mathscr{D}(R\_{1})\mathscr{D}(R\_{2}) &= \mathscr{D}(R\_{1}R\_{2}), \\\\
-	\sum\_{m'}\mathscr{D}(R\_{1})\ket{j\ m'}\bra{j\ m'} \mathscr{D}(R\_{2}) &= \mathscr{D}(R\_{1}R\_{2}), \\\\
-	\sum\_{m'}\bra {j\ m''}\mathscr{D}(R\_{1})\ket{j\ m'}\bra{j\ m'}\mathscr{D}(R\_{2})\ket{j\ m} &= \braket{ j\ m'' | \mathscr{D}(R\_{1}R\_{2}) | j\ m }, \\\\
+	\sum\_{m'}\mathscr{D}(R\_{1})\| j\ m' \rangle\langle j\ m' \| \mathscr{D}(R\_{2}) &= \mathscr{D}(R\_{1}R\_{2}), \\\\
+	\sum\_{m'}\langle j\ m'' \|\mathscr{D}(R\_{1})\| j\ m' \rangle\langle j\ m' \|\mathscr{D}(R\_{2})\| j\ m \rangle &= \langle  j\ m'' \| \mathscr{D}(R\_{1}R\_{2}) \| j\ m  \rangle, \\\\
 	\sum\_{m'}\mathscr{D}\_{m''m'}^{(j)}(R\_{1})\mathscr{D}\_{m'm}^{(j)}(R\_{2}) &= \mathscr{D}\_{m''m}^{(j)}(R\_{1}R\_{2}).
 	\end{align}
 	$$
 	
-	The first line follows from the postulate that the rotation operators are a group. Next, we insert the identity operator (We could have also summed over $j$ here, but since the matrix elements of $\mathscr{D}(R)$ vanish for states with different $j$, the sum would go away in the next step). Finally, we insert each side of the equation between $\bra{j\ m''}$ and $\ket{j\ m}$.
+	The first line follows from the postulate that the rotation operators are a group. Next, we insert the identity operator (We could have also summed over $j$ here, but since the matrix elements of $\mathscr{D}(R)$ vanish for states with different $j$, the sum would go away in the next step). Finally, we insert each side of the equation between $\langle j\ m'' \|$ and $\| j\ m \rangle$.
 4. Associativity: Follows from rules of matrix multiplication.
 
 ## Eigenvalues and eigenstates
@@ -227,15 +227,15 @@ Using only the fundamental angular momentum commutation relations, one can show 
 - The $J\_{+}$ ($J\_{-}$) operator raises (lowers) the eigenvalue of an eigenstate of $J\_{z}$ by one unit of $\hbar$ but leaves the eigenvalues of $\boldsymbol{J}^{2}$ unchanged.
 - The eigenvalue relationships for $\boldsymbol{J}^{2}$ and $J\_{z}$ are
 	$$
-	\boldsymbol{J}^{2}\ket{j\ m}  = j(j + 1)\hbar^{2}\ket{j\ m}\quad\text{and}\quad J\_{z}\ket{j\ m} = m\hbar \ket{j\ m}, 
+	\boldsymbol{J}^{2}\| j\ m \rangle  = j(j + 1)\hbar^{2}\| j\ m \rangle\quad\text{and}\quad J\_{z}\| j\ m \rangle = m\hbar \| j\ m \rangle, 
 	$$
 	
 	where $j = 0, \frac{1}{2}, 1, \frac{3}{2}, \dots$ and $m = -j, -j + 1, \dots, j - 1, j$.
 
-Using the fact that $J\_{\pm}\ket{j\ m} = c\_{jm}^{\pm}\ket{j\ m \pm 1}$, for some constant $c\_{jm}^{+}$, we can also obtain
+Using the fact that $J\_{\pm}\| j\ m \rangle = c\_{jm}^{\pm}\| j\ m \pm 1 \rangle$, for some constant $c\_{jm}^{+}$, we can also obtain
 
 $$
-J\_{\pm}\ket{j\ m} = \hbar\sqrt{ (j \mp m)(j \pm m + 1) }\ket{j\ m\pm 1}.
+J\_{\pm}\| j\ m \rangle = \hbar\sqrt{ (j \mp m)(j \pm m + 1) }\| j\ m\pm 1 \rangle.
 $$
 
 ## Orbital angular momentum
@@ -248,7 +248,7 @@ $$
 \mathscr{J}(d\boldsymbol{x}') = 1 - \frac{i\boldsymbol{p}\cdot d\boldsymbol{x}'}{\hbar},
 $$
 
-which acts on a ket as follows: $\mathscr{J}(d\boldsymbol{x}')\ket{\boldsymbol{x}'} = \ket{\boldsymbol{x}' + d\boldsymbol{x}'}$. This is useful because we can write
+which acts on a ket as follows: $\mathscr{J}(d\boldsymbol{x}')\| \boldsymbol{x}' \rangle = \| \boldsymbol{x}' + d\boldsymbol{x}' \rangle$. This is useful because we can write
 
 $$
 \mathscr{D}\_{z}(d\phi) = 1 - \frac{iL\_{z}d\phi}{\hbar} = 1 - \frac{i(xp\_{y} - yp\_{x})d\phi}{\hbar} = 1 - \frac{i\boldsymbol{p}\cdot d\boldsymbol{x}'}{\hbar},
@@ -257,40 +257,40 @@ $$
 with $d\boldsymbol{x}' = (-y'd\phi\quad x'd\phi\quad 0)^T$. In other words, we know how $\mathscr{J}(d\boldsymbol{x}')$ acts on kets, so we can use this reformulation to see how $\mathscr{D}\_{z}(d\phi)$ acts on kets when $\boldsymbol{L}$ is defined in terms of $\boldsymbol{x}$ and $\boldsymbol{p}$. For an arbitrary position eigenket, we have 
 
 $$
-\mathscr{D}\_{z}(d\phi)\ket{x', y', z'} = \ket{x' - y'd\phi, y' + x'd\phi, z'}.
+\mathscr{D}\_{z}(d\phi)\| x', y', z' \rangle = \| x' - y'd\phi, y' + x'd\phi, z' \rangle.
 $$
 
 This is how we would expect the components of the position vector to transform under an infinitesimal rotation $R\_{z}(d\phi)$, so the classical definition of $\boldsymbol{L}$ indeed generates a rotation in the sense of our earlier definition.
 
-The arguments of the wave function for a general ket $\ket{\psi}$ change **oppositely** to how the eigenvalues do, namely 
+The arguments of the wave function for a general ket $\| \psi \rangle$ change **oppositely** to how the eigenvalues do, namely 
 
 $$
-\braket{x', y', z' | \mathscr{D}\_{z}(d\phi) | \psi} = \braket{ x' + y'd\phi, y' - x'd\phi, z' | \psi }.
+\langle x', y', z' \| \mathscr{D}\_{z}(d\phi) \| \psi \rangle = \langle  x' + y'd\phi, y' - x'd\phi, z' \| \psi  \rangle.
 $$
 
 (Intuitively, if we rotate the *system* by $\phi$, this is equivalent to rotating the *argument* of the wave function by $-\phi$.) In spherical coordinates, we have
 
 $$
-\braket{ r, \theta, \phi | \mathscr{D}\_{z}(d\phi) | \psi } = \braket{ r, \theta, \phi - d\phi | \psi } = \braket{ r, \theta, \phi | \psi } - d\phi\frac{\partial}{\partial \phi}\braket{ r, \theta, \phi | \psi }.
+\langle  r, \theta, \phi \| \mathscr{D}\_{z}(d\phi) \| \psi  \rangle = \langle  r, \theta, \phi - d\phi \| \psi  \rangle = \langle  r, \theta, \phi \| \psi  \rangle - d\phi\frac{\partial}{\partial \phi}\langle  r, \theta, \phi \| \psi  \rangle.
 $$
 
-Here, we obtained the final equality by recognizing that $\bra{x' + y'd\phi, y'-x'd\phi, z'}$ is equivalent to $\bra{r, \theta, \phi - d\phi}$ and Taylor expanding the wave function in spherical coordinates. An alternative means is to Taylor expand the wave function in Cartesian coordinates and then transform the derivatives. In any case, the result is that
+Here, we obtained the final equality by recognizing that $\langle x' + y'd\phi, y'-x'd\phi, z' \|$ is equivalent to $\langle r, \theta, \phi - d\phi \|$ and Taylor expanding the wave function in spherical coordinates. An alternative means is to Taylor expand the wave function in Cartesian coordinates and then transform the derivatives. In any case, the result is that
 
 $$
-\braket{ \boldsymbol{x}' | L\_{z} | \psi } = -i\hbar \frac{\partial}{\partial \phi}\braket{ \boldsymbol{x}' | \psi }.
+\langle  \boldsymbol{x}' \| L\_{z} \| \psi  \rangle = -i\hbar \frac{\partial}{\partial \phi}\langle  \boldsymbol{x}' \| \psi  \rangle.
 $$
 
-Repeating this process to determine the action of $L\_{x}$ and $L\_{y}$ (and thereby $L\_{\pm}$) in the position basis, one can then show that $\braket{ \boldsymbol{x}' | \boldsymbol{L}^{2} | \psi}$ represents the action of the angular part of the Laplacian in spherical coordinates. Importantly, these relations can be used to derive the differential equations satisfied by the spherical harmonics.
+Repeating this process to determine the action of $L\_{x}$ and $L\_{y}$ (and thereby $L\_{\pm}$) in the position basis, one can then show that $\langle  \boldsymbol{x}' \| \boldsymbol{L}^{2} \| \psi \rangle$ represents the action of the angular part of the Laplacian in spherical coordinates. Importantly, these relations can be used to derive the differential equations satisfied by the spherical harmonics.
 
 ## Angular momentum addition
 
 When we consider multiple degrees of freedom in a quantum system, e.g. the orbital and spin angular momenta of a single particle or the spin angular momenta of two particles, we can treat the base kets as belonging to a [tensor product](https://en.wikipedia.org/wiki/Tensor\_product) space (Note the [difference](https://physics.stackexchange.com/questions/756962/tensor-product-vs-direct-product-in-qm) between a tensor product space and a direct product space). In the case of two spin $\frac{1}{2}$ particles, for example,
 
 $$
-\Ket{\frac{1}{2}\ \frac{1}{2}; \frac{1}{2}\ \frac{-1}{2}} = \Ket{\frac{1}{2}\ \frac{1}{2}}\otimes\Ket{\frac{1}{2}\ \frac{-1}{2}},
+\left\| \frac{1}{2}\ \frac{1}{2}; \frac{1}{2}\ \frac{-1}{2} \right\rangle = \left\| \frac{1}{2}\ \frac{1}{2} \right\rangle\otimes\left\| \frac{1}{2}\ \frac{-1}{2} \right\rangle,
 $$
 
-where we've used the naming convention $\ket{j\_{1}\ j\_{2}; m\_{1}\ m\_{2}} = \ket{j\_{1}\ m\_{1}}\otimes\ket{j\_{2}\ m\_{2}}$.
+where we've used the naming convention $\| j\_{1}\ j\_{2}; m\_{1}\ m\_{2} \rangle = \| j\_{1}\ m\_{1} \rangle\otimes\| j\_{2}\ m\_{2} \rangle$.
 
 Formally, consider two angular momentum operators $\boldsymbol{J}\_{1}$ and $\boldsymbol{J}\_{2}$ that operate in different subspaces of the tensor product space. The total angular momentum operator is defined as
 
@@ -302,89 +302,89 @@ The product notation here reflects the fact that $\boldsymbol{J}\_{1}$ and $\bol
 
 The key observation surrounding angular momentum addition is that there are two choices for the base kets:
 
-|                                      | Eigenkets of...                                                               |
-| ------------------------------------ | ----------------------------------------------------------------------------- |
-| $$\ket{j\_{1}\ j\_{2}; m\_{1}\ m\_{2}}$$ | $$\boldsymbol{J}\_{1}^{2}, \boldsymbol{J}\_{2}^{2}, J\_{1z}, J\_{2z}$$            |
-| $$\ket{j\_{1}\ j\_{2}; j\ m}$$         | $$\boldsymbol{J}\_{1}^{2}, \boldsymbol{J}\_{2}^{2}, \boldsymbol{J}^{2}, J\_{z}$$ |
+|                                    | Eigenkets of...                                                             |
+| ---------------------------------- | --------------------------------------------------------------------------- |
+| $\| j\_{1}\ j\_{2}; m\_{1}\ m\_{2} \rangle$ | $\boldsymbol{J}\_{1}^{2}, \boldsymbol{J}\_{2}^{2}, J\_{1z}, J\_{2z}$            |
+| $\| j\_{1}\ j\_{2}; j\ m \rangle$         | $\boldsymbol{J}\_{1}^{2}, \boldsymbol{J}\_{2}^{2}, \boldsymbol{J}^{2}, J\_{z}$ |
 
 These particular combinations arise because we want a maximal set of compatible observables, but $[\boldsymbol{J}^{2}, J\_{1z}] \neq 0$ and $[\boldsymbol{J}^{2}, J\_{2z}] \neq 0$.
 
 ### Aside on basis transformations
 
-The eigenkets $\ket{j\_{1}\ j\_{2};m\_{1}\ m\_{2}}$ and $\ket{j\_{1}\ j\_{2};j\ m}$ are related by a change of basis. Even though the mathematics consists of standard manipulations from linear algebra, I think it's easy to get caught up in the notation when seeing this for the first time in the quantum mechanics context. So, here are the basic ideas using vectors with simple labels.
+The eigenkets $\| j\_{1}\ j\_{2};m\_{1}\ m\_{2} \rangle$ and $\| j\_{1}\ j\_{2};j\ m \rangle$ are related by a change of basis. Even though the mathematics consists of standard manipulations from linear algebra, I think it's easy to get caught up in the notation when seeing this for the first time in the quantum mechanics context. So, here are the basic ideas using vectors with simple labels.
 
-Recall that a unitary operator $U$ that transforms an orthonormal basis $\{ \ket{a\_{i}} \}$ to a new orthonormal basis $\{ \ket{b\_{i}} \}$, in the sense that $\ket{b\_{i}} = U\ket{a\_{i}}$, is
+Recall that a unitary operator $U$ that transforms an orthonormal basis $\{ \| a\_{i} \rangle \}$ to a new orthonormal basis $\{ \| b\_{i} \rangle \}$, in the sense that $\| b\_{i} \rangle = U\| a\_{i} \rangle$, is
 
 $$
-U = \sum\_{i}\ket{b\_{i}} \bra{a\_{i}}. \tag{Change of basis operator}
+U = \sum\_{i}\| b\_{i} \rangle \langle a\_{i} \|. \tag{Change of basis operator}
 $$
 
-The matrix representation of $U$, called the transformation matrix, is given by $\braket{ a\_{i} | U | a\_{j} } = \braket{ a\_{i} | b\_{j} }$.
+The matrix representation of $U$, called the transformation matrix, is given by $\langle  a\_{i} \| U \| a\_{j}  \rangle = \langle  a\_{i} \| b\_{j}  \rangle$.
 
 While the base *kets* transform via $U$, the expansion *coefficients* (the components of a column matrix) transform via $U^{\dagger}$:
 
 $$
 \begin{align}
-\braket{ b\_{j} | \psi } &= \sum\_{i}\braket{ b\_{j} | a\_{i} } \braket{ a\_{i} | \psi } \\\\
-&= \sum\_{i}\braket{ a\_{j} | U^{\dagger} | a\_{i} } \braket{ a\_{i} | \psi }. 
+\langle  b\_{j} \| \psi  \rangle &= \sum\_{i}\langle  b\_{j} \| a\_{i}  \rangle \langle  a\_{i} \| \psi  \rangle \\\\
+&= \sum\_{i}\langle  a\_{j} \| U^{\dagger} \| a\_{i}  \rangle \langle  a\_{i} \| \psi  \rangle. 
 \end{align} \tag{Coefficient transform}
 $$
 
 We also have
 
 $$
-\ket{b\_{j}} = \sum\_{i}\ket{a\_{i}} \braket{ a\_{i} | b\_{j} } = \sum\_{i}\ket{a\_{i}}\braket{ a\_{i} | U | a\_{j}}. \tag{Base ket expansion}
+\| b\_{j} \rangle = \sum\_{i}\| a\_{i} \rangle \langle  a\_{i} \| b\_{j}  \rangle = \sum\_{i}\| a\_{i} \rangle\langle  a\_{i} \| U \| a\_{j} \rangle. \tag{Base ket expansion}
 $$
 
 The point I want to make is that the operator $U$ and its matrix representation appear in slightly different forms depending on the relationship being expressed (I've labeled the above equations to underscore this). In summary
 
-- We can form the *ket* $\ket{b\_{j}}$ by applying the *operator* $U$ to $\ket{a\_{j}}$.
+- We can form the *ket* $\| b\_{j} \rangle$ by applying the *operator* $U$ to $\| a\_{j} \rangle$.
 - We can obtain the *components* of a general ket using the *matrix representation* of $U^{\dagger}$.
-- We can expand $\ket{b\_{j}}$ as a linear combination of $\{ \ket{a\_{i}} \}$, where the components of the *matrix representation* of $U$ are the *coefficients* in the expansion.
+- We can expand $\| b\_{j} \rangle$ as a linear combination of $\{ \| a\_{i} \rangle \}$, where the components of the *matrix representation* of $U$ are the *coefficients* in the expansion.
 
 I realize this is a bit pedantic, but it can save confusion when the term "transformation matrix" is used loosely.
 
 ### Back to angular momentum addition
 
-**The eigenkets $\ket{j\_{1}\ j\_{2};m\_{1}\ m\_{2}}$ and $\ket{j\_{1}\ j\_{2};j\ m}$ are two choices for the ket space of fixed $j\_{1}$ and $j\_{2}$.** It's worth pausing on this statement. In general, the tensor product notation $\ket{j\_{1}\ m\_{1}}\otimes\ket{j\_{2}\ m\_{2}}$ could be taken to mean all combinations of $j\_{1}$ and $j\_{2}$, but often these are understood to be fixed (For instance, if one is considering the combined spin angular momenta of two particles, the spins of the particles are fixed). In this case, then, what we are really talking about is a subspace of the tensor product space $\ket{j\_{1}\ m\_{1}}\otimes\ket{j\_{2}\ m\_{2}}$. The identity operator in this subspace is
+**The eigenkets $\| j\_{1}\ j\_{2};m\_{1}\ m\_{2} \rangle$ and $\| j\_{1}\ j\_{2};j\ m \rangle$ are two choices for the ket space of fixed $j\_{1}$ and $j\_{2}$.** It's worth pausing on this statement. In general, the tensor product notation $\| j\_{1}\ m\_{1} \rangle\otimes\| j\_{2}\ m\_{2} \rangle$ could be taken to mean all combinations of $j\_{1}$ and $j\_{2}$, but often these are understood to be fixed (For instance, if one is considering the combined spin angular momenta of two particles, the spins of the particles are fixed). In this case, then, what we are really talking about is a subspace of the tensor product space $\| j\_{1}\ m\_{1} \rangle\otimes\| j\_{2}\ m\_{2} \rangle$. The identity operator in this subspace is
 
 $$
-\sum\_{m\_{1}}\sum\_{m\_{2}}\ket{j\_{1}\ j\_{2};m\_{1}\ m\_{2}} \bra{j\_{1}\ j\_{2};m\_{1}\ m\_{2}} = 1.
+\sum\_{m\_{1}}\sum\_{m\_{2}}\| j\_{1}\ j\_{2};m\_{1}\ m\_{2} \rangle \langle j\_{1}\ j\_{2};m\_{1}\ m\_{2} \| = 1.
 $$
 
 Using this to form the base ket expansion I showed in the above aside, we can write
 
 $$
-\ket{j\_{1}\ j\_{2};j\ m} = \sum\_{m\_{1}}\sum\_{m\_{2}}\ket{j\_{1}\ j\_{2};m\_{1}\ m\_{2}} \braket{ j\_{1}\ j\_{2};m\_{1}\ m\_{2} | j\_{1}\ j\_{2};j\ m }, 
+\| j\_{1}\ j\_{2};j\ m \rangle = \sum\_{m\_{1}}\sum\_{m\_{2}}\| j\_{1}\ j\_{2};m\_{1}\ m\_{2} \rangle \langle  j\_{1}\ j\_{2};m\_{1}\ m\_{2} \| j\_{1}\ j\_{2};j\ m  \rangle, 
 $$
 
-where $\braket{ j\_{1}\ j\_{2};m\_{1}\ m\_{2} | j\_{1}\ j\_{2};j\ m }$ are the important **Clebsch-Gordon** coefficients. One can show the key properties that
+where $\langle  j\_{1}\ j\_{2};m\_{1}\ m\_{2} \| j\_{1}\ j\_{2};j\ m  \rangle$ are the important **Clebsch-Gordon** coefficients. One can show the key properties that
 
-- $\braket{ j\_{1}\ j\_{2};m\_{1}\ m\_{2} | j\_{1}\ j\_{2};j\ m } = 0$ unless $m\_{1} + m\_{2} = m$
-- $|j\_{1} - j\_{2}| \le j \le j\_{1} + j\_{2}$
+- $\langle  j\_{1}\ j\_{2};m\_{1}\ m\_{2} \| j\_{1}\ j\_{2};j\ m  \rangle = 0$ unless $m\_{1} + m\_{2} = m$
+- $\|j\_{1} - j\_{2}\| \le j \le j\_{1} + j\_{2}$
 
-Since $\braket{ j\_{1}\ j\_{2};m\_{1}\ m\_{2} | j\_{1}\ j\_{2};j\ m }$ are the elements of a unitary change of basis operator, the Clebsch-Gordon coefficients form a unitary matrix. We take the matrix elements to be real.
+Since $\langle  j\_{1}\ j\_{2};m\_{1}\ m\_{2} \| j\_{1}\ j\_{2};j\ m  \rangle$ are the elements of a unitary change of basis operator, the Clebsch-Gordon coefficients form a unitary matrix. We take the matrix elements to be real.
 
 The connection between group theory and the choice of bets kets is that the tensor product $\mathscr{D}^{(j\_{1})}\otimes \mathscr{D}^{(j\_{2})}$ is reducible:
 
 $$
-\mathscr{D}^{(j\_{1})}\otimes \mathscr{D}^{(j\_{2})} = \mathscr{D}^{(j\_{1} + j\_{2})} \oplus \mathscr{D}^{(j\_{1}+j\_{2}-1)}\oplus \cdots\oplus \mathscr{D}^{(|j\_{1}-j\_{2}|)}.
+\mathscr{D}^{(j\_{1})}\otimes \mathscr{D}^{(j\_{2})} = \mathscr{D}^{(j\_{1} + j\_{2})} \oplus \mathscr{D}^{(j\_{1}+j\_{2}-1)}\oplus \cdots\oplus \mathscr{D}^{(\|j\_{1}-j\_{2}\|)}.
 $$
 
-In the $\ket{j\_{1}\ j\_{2};m\_{1}\ m\_{2}}$ basis, the elements of the total rotation matrix $\mathscr{D}(R) = \mathscr{D}^{(j\_{1})}(R)\otimes \mathscr{D}^{(j\_{2})}(R)$ are given by
+In the $\| j\_{1}\ j\_{2};m\_{1}\ m\_{2} \rangle$ basis, the elements of the total rotation matrix $\mathscr{D}(R) = \mathscr{D}^{(j\_{1})}(R)\otimes \mathscr{D}^{(j\_{2})}(R)$ are given by
 
 $$
-\mathscr{D}\_{m\_{1}'m\_{1}}^{(j\_{1})}(R)\mathscr{D}\_{m\_{2}'m\_{2}}^{(j\_{2})}(R) = \sum\_{j}\sum\_{m}\sum\_{m'}\braket{ j\_{1}\ j\_{2};m\_{1}'\ m\_{2}' | j\_{1}\ j\_{2};j\ m' }\mathscr{D}\_{m'm}^{(j)}(R)\braket{ j\_{1}\ j\_{2};m\_{1}\ m\_{2} | j\_{1}\ j\_{2};j\ m },
+\mathscr{D}\_{m\_{1}'m\_{1}}^{(j\_{1})}(R)\mathscr{D}\_{m\_{2}'m\_{2}}^{(j\_{2})}(R) = \sum\_{j}\sum\_{m}\sum\_{m'}\langle  j\_{1}\ j\_{2};m\_{1}'\ m\_{2}' \| j\_{1}\ j\_{2};j\ m'  \rangle\mathscr{D}\_{m'm}^{(j)}(R)\langle  j\_{1}\ j\_{2};m\_{1}\ m\_{2} \| j\_{1}\ j\_{2};j\ m  \rangle,
 $$
 
-which is called the Clebsch-Gordon series. We can obtain this by expanding $\braket{ j\_{1}\ j\_{2};m\_{1}'\ m\_{2}' | \mathscr{D}(R) | j\_{1}\ j\_{2};m\_{1}\ m\_{2} }$ two different ways. To get the left side, we use the fact that 
+which is called the Clebsch-Gordon series. We can obtain this by expanding $\langle  j\_{1}\ j\_{2};m\_{1}'\ m\_{2}' \| \mathscr{D}(R) \| j\_{1}\ j\_{2};m\_{1}\ m\_{2}  \rangle$ two different ways. To get the left side, we use the fact that 
 
 $$
-\braket{ \psi\_{A}\otimes \psi\_{B} | A\otimes B | \phi\_{A}\otimes\phi\_{B} } = \braket{ \psi\_{A} | A | \phi\_{A} } \cdot \braket{ \psi\_{B} | B | \phi\_{B} } 
+\langle  \psi\_{A}\otimes \psi\_{B} \| A\otimes B \| \phi\_{A}\otimes\phi\_{B}  \rangle = \langle  \psi\_{A} \| A \| \phi\_{A}  \rangle \cdot \langle  \psi\_{B} \| B \| \phi\_{B}  \rangle 
 $$
 
-for a tensor product space $\mathcal{H} = \mathcal{H}\_{A}\otimes\mathcal{H}\_{B}$. To get the right, we simply insert two resolutions of the identity operator in the $\ket{j\_{1}\ j\_{2};j\ m}$ basis. 
+for a tensor product space $\mathcal{H} = \mathcal{H}\_{A}\otimes\mathcal{H}\_{B}$. To get the right, we simply insert two resolutions of the identity operator in the $\| j\_{1}\ j\_{2};j\ m \rangle$ basis. 
 
-In the $\ket{j\_{1}\ j\_{2};j\ m}$ basis, the total rotation matrix $\mathscr{D}(R)$ is block diagonal, with the block for a given $j$ simply given by $\mathscr{D}\_{m'm}^{(j)}(R)$. Each subspace of definite $j$ is irreducible.
+In the $\| j\_{1}\ j\_{2};j\ m \rangle$ basis, the total rotation matrix $\mathscr{D}(R)$ is block diagonal, with the block for a given $j$ simply given by $\mathscr{D}\_{m'm}^{(j)}(R)$. Each subspace of definite $j$ is irreducible.
 
 With these preliminaries about rotations and angular momentum in place, we're in a position to introduce spherical tensors and establish physical intuition for how they're combined via the Clebsch-Gordon tensor product.
